@@ -1748,8 +1748,34 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Can you explain your data model, data schema to me?
+Application Layout through subpackages
+ - config
+ - controllers
+ - models
+ - repositories
+ - services
+    
+There is a ManyToOne relationship between todos and Users. Inversely there is a OneToMany Relationship between a User and Todos. 
+
+
 2. Can you explain how you connected your API to a database?
+
+Spring Initializr creates a simple class for the application. The Initializr offers a fast way to pull in all the dependencies you need for an application and does a lot of the setup for you. 
+
+@SpringBootApplication is a convenience annotation that adds all of the following:
+
+    @Configuration: Tags the class as a source of bean definitions for the application context.
+
+    @EnableAutoConfiguration: Tells Spring Boot to start adding beans based on classpath settings, other beans, and various property     settings. 
+
+    @ComponentScan: Tells Spring to look for other components, configurations, and services in the com/example package, letting it      find the controllers.
+
+    The main() method uses Spring Boot’s SpringApplication.run() method to launch an application.
+
+
 3. Can you explain the flow of data from client through the backend system and back to the client?
+
+    
 4. How did you handle querying in your application: custom querying vs JPA Querying?
 
 ## Instructions
